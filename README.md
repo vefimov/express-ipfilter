@@ -1,9 +1,7 @@
-express-ipfilter: A light-weight IP address based filtering system
+express-ipfilter-secured: A light-weight IP address based filtering system
 =================================================================================
 
 This package provides easy IP based access control. This can be achieved either by blacklisting certain IPs and whitelisting all others, or whitelisting certain IPs and blacklisting all others.
-
-[![Circle CI](https://circleci.com/gh/baminteractive/express-ipfilter/tree/master.svg?style=svg)](https://circleci.com/gh/baminteractive/express-ipfilter/tree/master)
 
 ## Version
 0.3.2
@@ -12,7 +10,7 @@ This package provides easy IP based access control. This can be achieved either 
 
 Recommended installation is with npm. To add node-ipfilter to your project, do:
 
-    npm install express-ipfilter
+    npm install express-ipfilter-secured
 
 ## Usage with Express
 
@@ -23,7 +21,7 @@ Blacklisting certain IP addresses, while allowing all other IPs:
 ```javascript
 // Init dependencies
 var express = require('express'),
-    ipfilter = require('express-ipfilter').IpFilter;
+    ipfilter = require('express-ipfilter-secured').IpFilter;
 
 // Blacklist the following IPs
 var ips = ['127.0.0.1'];
@@ -39,7 +37,7 @@ Whitelisting certain IP addresses, while denying all other IPs:
 // Init dependencies
 // Init dependencies
 var express = require('express'),
-    ipfilter = require('express-ipfilter').IpFilter;
+    ipfilter = require('express-ipfilter-secured').IpFilter;
 
 // Whitelist the following IPs
 var ips = ['127.0.0.1'];
@@ -156,6 +154,9 @@ This will run `eslint`,`babel`, and `mocha` and output coverage data into `cover
 
 ## Changelog
 
+0.3.3
+ * Use invokeMap to match the Ips
+
 0.3.2
  * Bump the lodash version due to security concerns
  * Update lodash usage in `src/ipfulter.js` for tests to pass
@@ -190,8 +191,8 @@ This will run `eslint`,`babel`, and `mocha` and output coverage data into `cover
 0.2.0
 * Changed how error handling works
 * Removed settings for specific vendor ip addresses and added `allowedHeaders` to support those header-based IP addresses.
-* You must now specifically require `IpFilter`, i.e. `var ipfilter = require('express-ipfilter').IpFilter;`
-* If you want to handle errors you must require the error type as well `var IpDeniedError = require('express-ipfilter').IpDeniedError;`
+* You must now specifically require `IpFilter`, i.e. `var ipfilter = require('express-ipfilter-secured').IpFilter;`
+* If you want to handle errors you must require the error type as well `var IpDeniedError = require('express-ipfilter-secured').IpDeniedError;`
 
 0.1.1
 * Added a favicon to the example to suppress the 404 error looking for it.
@@ -223,7 +224,7 @@ This will run `eslint`,`babel`, and `mocha` and output coverage data into `cover
 
 0.0.19
 
-* Added detection for CloudFlare forwarded ips - https://github.com/baminteractive/express-ipfilter/commit/9aa43af14f5a003bad3145eef658f429808818f9 (@lafama)
+* Added detection for CloudFlare forwarded ips - https://github.com/baminteractive/express-ipfilter-secured/commit/9aa43af14f5a003bad3145eef658f429808818f9 (@lafama)
 
 0.0.18
 
