@@ -1,5 +1,5 @@
 {
-  "name": "express-ipfilter",
+  "name": "express-ipfilter-secured",
   "description": "A light-weight IP address based filtering system",
   "version": "0.3.3",
   "author": "BaM Interactive",
